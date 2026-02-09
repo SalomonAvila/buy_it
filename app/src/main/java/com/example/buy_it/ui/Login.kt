@@ -3,6 +3,7 @@ package com.example.buy_it.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
@@ -24,9 +25,9 @@ fun Login(
         modifier = modifier
             .fillMaxSize()
     ){
-        Circle(painter = painterResource(R.drawable.elipse1), modifier = Modifier.offset(x=-32.dp).size(270.dp))
-        Circle(painter = painterResource(R.drawable.elipse2), modifier = Modifier.offset(x = 135.dp,y=200.dp).size(287.dp))
-        Circle(painter = painterResource(R.drawable.elipse3), modifier = Modifier.offset(x=-16.dp, y = 450.dp).size(270.dp))
+        Circle(painter = painterResource(R.drawable.elipse1), modifier = Modifier.align(Alignment.TopStart).offset(x=-32.dp).size(270.dp))
+        Circle(painter = painterResource(R.drawable.elipse2), modifier = Modifier.align(Alignment.TopEnd).offset(x = 135.dp,y=200.dp).size(287.dp))
+        Circle(painter = painterResource(R.drawable.elipse3), modifier = Modifier.align(Alignment.TopStart).offset(x=-16.dp, y = 450.dp).size(270.dp))
         GlassPanel(modifier = Modifier.align(Alignment.Center))
     }
 }
