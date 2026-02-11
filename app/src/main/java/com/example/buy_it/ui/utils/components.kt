@@ -102,6 +102,7 @@ fun GlassPanel(
             )
             Text(modifier = Modifier.padding(bottom = 20.dp),text = stringResource(R.string.otras_formas_de_iniciar_sesion), fontWeight = FontWeight(510), fontSize = 16.sp)
             Row() {
+                //Cambiar esto cuando se cambie el fondo de ciruculo de imagen a figura
                 LoginOption(Modifier.size(74.dp),backgroundGlass = painterResource(R.drawable.elipse4), loginIcon = painterResource(R.drawable.googlewhite))
                 Spacer(Modifier.width(30.dp))
                 LoginOption(Modifier.size(74.dp),backgroundGlass = painterResource(R.drawable.elipse5), loginIcon = painterResource(R.drawable.apple))
@@ -117,7 +118,7 @@ fun GlassPanelPreview(){
 }
 
 //Logo principal
-//TODO: Degradado
+//TODO: Degradado, definir color por resource
 @Composable
 fun LogoMessage(
     modifier: Modifier = Modifier,
@@ -170,7 +171,8 @@ fun TextInputPreview(){
 
 }
 
-
+//Texto de recordar
+//TODO: Volver a strinng resource
 @Composable
 fun CheckAndText(
     modifier: Modifier = Modifier,
@@ -201,6 +203,7 @@ fun CheckAndTextPreview(){
     CheckAndText()
 }
 
+//Boton Iniciar Sesión, el texto es pasado por parámetro
 @Composable
 fun MainButton(
     modifier: Modifier = Modifier,
@@ -226,6 +229,7 @@ fun MainButtonPreview(){
 
 }
 
+//Boton Registrarse, el texto es pasado por parámetro
 @Composable
 fun SecondaryButton(
     modifier: Modifier = Modifier,
@@ -251,7 +255,11 @@ fun SecondaryButtonPreview(){
     SecondaryButton(text = "Crear cuenta")
 }
 
-
+/*
+Opciones de login, del mockup figma: google y apple
+La imagen se le pasa por parámetro
+TODO: Que el fondo no sea imagen sino un círculo
+ */
 @Composable
 fun LoginOption(
     modifier: Modifier = Modifier,
