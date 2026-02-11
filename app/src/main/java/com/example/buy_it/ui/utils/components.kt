@@ -38,6 +38,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.buy_it.R
 
+//circulo
+//TODO: degradado, y que no sea imagen
 @Composable
 fun Circle(
     modifier: Modifier = Modifier,
@@ -56,6 +58,8 @@ fun CirclePreview(){
     Circle()
 }
 
+//panel principal
+//TODO: volverlo vidrio
 @Composable
 fun GlassPanel(
     modifier : Modifier = Modifier
