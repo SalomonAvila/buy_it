@@ -76,7 +76,7 @@ fun GlassPanel(
         ) {
             LogoMessage(modifier = Modifier.padding(top = 35.dp, bottom = 40.dp))
             TextInput(text= stringResource(R.string.e_mail))
-            TextInput(text ="Contraseña")
+            TextInput(text = stringResource(R.string.contrasenna))
             CheckAndText(modifier = Modifier.padding(top = 10.dp))
             Text(
                 text = "¿Olvidó su contraseña?",
