@@ -1,6 +1,7 @@
 package com.example.buy_it.ui.utils
 
 import androidx.annotation.ColorRes
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -62,7 +63,21 @@ fun Elipse(
 ){
     val color1 = colorResource(id = colorStart)
     val color2 = colorResource(id = colorEnd)
-
+    Canvas(modifier = modifier.size(radio*2)){
+        val radioPX = radio.toPx() //si bien se le pasa el radio por DP, se tiene que convertir
+        drawCircle(
+            brush = Brush.linearGradient(
+                colorStops = arrayOf(
+                    posicionColor1 to color1,
+                    posicionColor2 to color2
+                ),
+                start = Offset(0f, 0f),
+                end = endOffset
+            ),
+            radius = radioPX,
+            center = center
+        )
+    }
 }
 
 
