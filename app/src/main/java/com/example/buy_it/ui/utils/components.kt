@@ -59,18 +59,21 @@ y = sin(angulo)
  */
 @Composable
 fun Elipse(
-    @ColorRes colorStart: Int = R.color.bgwhite,
-    @ColorRes colorEnd: Int = R.color.graybluebuyit,
+    @ColorRes colorStart: Int = R.color.graybluebuyit, //anotacion de color res para recibir por color resource
+    @ColorRes colorEnd: Int = R.color.bgwhite,
     radio: Dp = 50.dp,
-    angulo: Float = 45f,
+    angulo: Float = 45f, //angulo del gradiente
     inicioGradiente: Float = 0.5f,
     finGradiente: Float = 0.0f,
     modifier: Modifier = Modifier
 ){
+    //sacar los ids de los colores
     val color1 = colorResource(id = colorStart)
     val color2 = colorResource(id = colorEnd)
 
+    //tamaño del canva
     Canvas(modifier = modifier.size(radio * 2)){
+        //canvas solo recibe px pero es bueno que el parametro sea dp para que en android se entienda la medida
         val radioPX = radio.toPx()
         //se tiene que convertir a radianes pq kotlin solo admite radianes
         val anguloRad = Math.toRadians(angulo.toDouble()).toFloat()
@@ -82,13 +85,15 @@ fun Elipse(
         val endX = center.x + cos(anguloRad) * radioPX
         val endY = center.y + sin(anguloRad) * radioPX
 
+        //aca se dibuja
         drawCircle(
             brush = Brush.linearGradient(
+                //desde donde van los colores
                 colorStops = arrayOf(
                     inicioGradiente to color1,
                     finGradiente to color2
                 ),
-                start = Offset(startX, startY),
+                start = Offset(startX, startY), //el inicio con respecto al centro
                 end = Offset(endX, endY)
             ),
             radius = radioPX,
@@ -106,7 +111,7 @@ fun ElipsePreview(){
         radio = 100.dp,
         angulo = -71f,
         inicioGradiente = 0.1f,
-        finGradiente = 0.8f
+        finGradiente = 0.7f
     )
 }
 
