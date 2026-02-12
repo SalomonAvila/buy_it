@@ -43,36 +43,53 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.buy_it.R
+import kotlin.math.cos
+import kotlin.math.sin
 
 /*
 se necesitan:
 2 colores para el degradado, por color res
 radio, siempre va a ser regular, en dp
-el end offset
+el end offset, ahora es el angulo
 y las posiciones en porcentajes
+
+offset(x,y)
+x = cos(angulo)
+y = sin(angulo)
  */
 @Composable
 fun Elipse(
-    @ColorRes colorStart: Int = R.color.graybluebuyit,
-    @ColorRes colorEnd: Int = R.color.bgwhite,
+    @ColorRes colorStart: Int = R.color.bgwhite,
+    @ColorRes colorEnd: Int = R.color.graybluebuyit,
     radio: Dp = 50.dp,
-    posicionColor1: Float = 0.5f,
-    posicionColor2: Float = 0.5f,
-    endOffset: Offset = Offset(200f, 200f),
+    angulo: Float = 45f,
+    inicioGradiente: Float = 0.5f,
+    finGradiente: Float = 0.0f,
     modifier: Modifier = Modifier
 ){
     val color1 = colorResource(id = colorStart)
     val color2 = colorResource(id = colorEnd)
-    Canvas(modifier = modifier.size(radio*2)){
-        val radioPX = radio.toPx() //si bien se le pasa el radio por DP, se tiene que convertir
+
+    Canvas(modifier = modifier.size(radio * 2)){
+        val radioPX = radio.toPx()
+        //se tiene que convertir a radianes pq kotlin solo admite radianes
+        val anguloRad = Math.toRadians(angulo.toDouble()).toFloat()
+
+        // equivalente a offset de start
+        val startX = center.x - cos(anguloRad) * radioPX
+        val startY = center.y - sin(anguloRad) * radioPX
+        // equivalente a offset de end
+        val endX = center.x + cos(anguloRad) * radioPX
+        val endY = center.y + sin(anguloRad) * radioPX
+
         drawCircle(
             brush = Brush.linearGradient(
                 colorStops = arrayOf(
-                    posicionColor1 to color1,
-                    posicionColor2 to color2
+                    inicioGradiente to color1,
+                    finGradiente to color2
                 ),
-                start = Offset(0f, 0f),
-                end = endOffset
+                start = Offset(startX, startY),
+                end = Offset(endX, endY)
             ),
             radius = radioPX,
             center = center
@@ -84,10 +101,12 @@ fun Elipse(
 @Preview()
 fun ElipsePreview(){
     Elipse(
+        colorStart = R.color.graybluebuyit,
+        colorEnd = R.color.bgwhite,
         radio = 100.dp,
-        posicionColor1 = 0.17f,
-        posicionColor2 = 1.0f,
-        endOffset = Offset(10f, 700f)
+        angulo = -71f,
+        inicioGradiente = 0.1f,
+        finGradiente = 0.8f
     )
 }
 
