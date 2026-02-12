@@ -1,5 +1,6 @@
 package com.example.buy_it.ui.utils
 
+import androidx.annotation.ColorRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -25,6 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Canvas
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.colorResource
@@ -35,16 +37,31 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.buy_it.R
 
-
+/*
+se necesitan:
+2 colores para el degradado, por color res
+radio, siempre va a ser regular, en dp
+el end offset
+y las posiciones en porcentajes
+ */
 @Composable
 fun Elipse(
+    @ColorRes colorStart: Int = R.color.graybluebuyit,
+    @ColorRes colorEnd: Int = R.color.bgwhite,
+    radio: Dp = 50.dp,
+    posicionColor1: Float = 0.5f,
+    posicionColor2: Float = 0.5f,
+    endOffset: Offset = Offset(200f, 200f),
     modifier: Modifier = Modifier
 ){
+    val color1 = colorResource(id = colorStart)
+    val color2 = colorResource(id = colorEnd)
 
 }
 
