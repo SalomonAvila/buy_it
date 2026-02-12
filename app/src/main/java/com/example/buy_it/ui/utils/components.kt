@@ -1,5 +1,7 @@
 package com.example.buy_it.ui.utils
 
+import androidx.annotation.ColorRes
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -35,10 +37,84 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.buy_it.R
+import kotlin.math.cos
+import kotlin.math.sin
+
+/*
+se necesitan:
+2 colores para el degradado, por color res
+radio, siempre va a ser regular, en dp
+el end offset, ahora es el angulo
+y las posiciones en porcentajes
+
+offset(x,y)
+x = cos(angulo)
+y = sin(angulo)
+ */
+@Composable
+fun Elipse(
+    @ColorRes colorStart: Int = R.color.graybluebuyit, //anotacion de color res para recibir por color resource
+    @ColorRes colorEnd: Int = R.color.bgwhite,
+    radio: Dp = 50.dp,
+    angulo: Float = 45f, //angulo del gradiente
+    inicioGradiente: Float = 0.5f,
+    finGradiente: Float = 0.0f,
+    modifier: Modifier = Modifier
+){
+    //sacar los ids de los colores
+    val color1 = colorResource(id = colorStart)
+    val color2 = colorResource(id = colorEnd)
+
+    //tamaño del canva
+    Canvas(modifier = modifier.size(radio * 2)){
+        //canvas solo recibe px pero es bueno que el parametro sea dp para que en android se entienda la medida
+        val radioPX = radio.toPx()
+        //se tiene que convertir a radianes pq kotlin solo admite radianes
+        val anguloRad = Math.toRadians(angulo.toDouble()).toFloat()
+
+        // equivalente a offset de start
+        val startX = center.x - cos(anguloRad) * radioPX
+        val startY = center.y - sin(anguloRad) * radioPX
+        // equivalente a offset de end
+        val endX = center.x + cos(anguloRad) * radioPX
+        val endY = center.y + sin(anguloRad) * radioPX
+
+        //aca se dibuja
+        drawCircle(
+            brush = Brush.linearGradient(
+                //desde donde van los colores
+                colorStops = arrayOf(
+                    inicioGradiente to color1,
+                    finGradiente to color2
+                ),
+                start = Offset(startX, startY), //el inicio con respecto al centro
+                end = Offset(endX, endY)
+            ),
+            radius = radioPX,
+            center = center
+        )
+    }
+}
+
+@Composable
+@Preview()
+fun ElipsePreview(){
+    Elipse(
+        colorStart = R.color.graybluebuyit,
+        colorEnd = R.color.bgwhite,
+        radio = 100.dp,
+        angulo = -71f,
+        inicioGradiente = 0.1f,
+        finGradiente = 0.7f
+
+    )
+}
+
 
 //circulo
 //TODO: degradado, y que no sea imagen
