@@ -10,13 +10,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.buy_it.R
 
 @Composable
-fun FondoBlanco(modifier: Modifier = Modifier){
+fun FondoBlanco(){
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(colorResource(R.color.bgwhite))
     )
-
 }
 
 @Composable
