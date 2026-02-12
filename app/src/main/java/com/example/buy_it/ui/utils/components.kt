@@ -80,6 +80,16 @@ fun Elipse(
     }
 }
 
+@Composable
+@Preview()
+fun ElipsePreview(){
+    Elipse(
+        radio = 100.dp,
+        posicionColor1 = 0.17f,
+        posicionColor2 = 1.0f,
+        endOffset = Offset(10f, 700f)
+    )
+}
 
 
 //circulo
