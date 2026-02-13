@@ -50,6 +50,7 @@ fun EditInfo(
                 text = stringResource(R.string.nombre),
 
             )
+
             TextInput(
                 text = stringResource(R.string.buy_it)
             )
