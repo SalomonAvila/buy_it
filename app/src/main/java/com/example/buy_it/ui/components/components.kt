@@ -407,31 +407,7 @@ fun LoginOptionPreview(){
     LoginOption(backgroundGlass = painterResource(R.drawable.elipse4), loginIcon = painterResource(R.drawable.googlewhite))
 }
 
-@Composable
-fun PictureWithCircle(
-    modifier: Modifier = Modifier
-){
-    Box(
-        modifier = modifier,
-        contentAlignment = Alignment.Center,
-    ){
-        CompleteELipse(
-            sizeDraw = 175.dp
-        )
-        Image(
-            modifier = Modifier.size(160.dp),
-            painter = painterResource(R.drawable.logo),
-            contentDescription = stringResource(R.string.logo_de_la_pagina)
-        )
-    }
 
-}
-
-@Composable
-@Preview
-fun PictureWithCirclePreview(){
-    PictureWithCircle()
-}
 
 @Composable
 fun ProfileText(

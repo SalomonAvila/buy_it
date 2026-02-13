@@ -19,7 +19,6 @@ import com.example.buy_it.R
 import com.example.buy_it.ui.components.FondoBlancoEditInfo
 import com.example.buy_it.ui.components.MainButton
 import com.example.buy_it.ui.components.PanelGlass
-import com.example.buy_it.ui.components.PictureWithCircle
 import com.example.buy_it.ui.components.TextInput
 
 @Composable
