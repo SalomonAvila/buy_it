@@ -113,6 +113,7 @@ fun Profile(
                 .size(40.dp)
                 .offset(x=100.dp,y=140.dp)
         )
+
     }
 
 }
