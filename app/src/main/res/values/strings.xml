@@ -22,4 +22,11 @@
     <string name="buy_it">Buy it.</string>
     <string name="asteriscos">*******</string>
     <string name="guardar_cambios">Guardar Cambios</string>
+    <string name="barra_de_navegacion">Barra de navegacion</string>
+    <string name="editar_perfil">Editar perfil</string>
+    <string name="imagen_de_elipse">Imagen de elipse</string>
+    <string name="fondo_de_una_forma_alterna_de_inicio_de_sesion">Fondo de una forma alterna de inicio de sesion</string>
+    <string name="logo_de_forma_alterna_de_inicio_de_sesion">Logo de forma alterna de inicio de sesion</string>
+    <string name="logo_de_la_pagina">logo de la pagina</string>
+    <string name="producto">producto</string>
 </resources>

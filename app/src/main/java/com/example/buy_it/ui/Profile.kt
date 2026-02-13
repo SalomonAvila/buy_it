@@ -97,7 +97,7 @@ fun Profile(
         }
         Image(
             painter = painterResource(R.drawable.barra),
-            contentDescription = stringResource(R.string.empty),
+            contentDescription = stringResource(R.string.barra_de_navegacion),
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .fillMaxWidth()
@@ -106,12 +106,12 @@ fun Profile(
         )
         Image(
             painter = painterResource(R.drawable.edit),
-            contentDescription = stringResource(R.string.empty),
+            contentDescription = stringResource(R.string.editar_perfil),
             modifier = Modifier
                 .align(Alignment.TopCenter)
                 .fillMaxWidth()
                 .size(40.dp)
-                .offset(x=100.dp,y=140.dp)
+                .offset(x = 100.dp, y = 140.dp)
         )
 
     }

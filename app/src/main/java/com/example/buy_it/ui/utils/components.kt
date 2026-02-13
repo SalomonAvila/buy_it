@@ -149,7 +149,7 @@ fun Circle(
 ) {
     Image(
         painter = painter,
-        contentDescription = "",
+        contentDescription = stringResource(R.string.imagen_de_elipse),
         modifier = modifier,
     )
 }
@@ -390,12 +390,12 @@ fun LoginOption(
         Image(
             modifier = Modifier.fillMaxSize(),
             painter = backgroundGlass,
-            contentDescription = "",
+            contentDescription = stringResource(R.string.fondo_de_una_forma_alterna_de_inicio_de_sesion),
         )
         Image(
             modifier = Modifier.fillMaxSize(0.7f),
             painter = loginIcon,
-            contentDescription = ""
+            contentDescription = stringResource(R.string.logo_de_forma_alterna_de_inicio_de_sesion)
         )
     }
 
@@ -422,7 +422,7 @@ fun PictureWithCircle(
         Image(
             modifier = Modifier.size(160.dp),
             painter = painterResource(R.drawable.logo),
-            contentDescription = ""
+            contentDescription = stringResource(R.string.logo_de_la_pagina)
         )
     }
 
@@ -459,7 +459,7 @@ fun ProfilePost(
 ){
     Image(
         painter = painterResource(img),
-        contentDescription = "",
+        contentDescription = stringResource(R.string.producto),
         modifier = modifier.size(170.dp)
     )
 }
