@@ -5,9 +5,13 @@ El objetivo de este proyecto es crear una red social donde se creen reseñas ref
 
 ## Integrantes
 [Salomon Avila](https://github.com/SalomonAvila)
+
 [Miguel Angel Garcia](https://github.com/Islunimy)
+
 [Luis Santos](https://github.com/advSNTS)
+
 [Gabriel Jaramillo](https://github.com/GabrielJaramilloCuberos)
+
 
 ## Requerimientos
 
