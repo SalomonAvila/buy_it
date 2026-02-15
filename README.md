@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# buy_it
-=======
+
 # Buy it
 
 ## Objetivo
@@ -23,4 +21,4 @@ El objetivo de este proyecto es crear una red social donde se creen reseñas ref
 ## Diagrama de clases
 
 ## Paleta de colores
->>>>>>> develop
+
